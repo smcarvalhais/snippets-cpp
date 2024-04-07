@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void QuickSortRec(int vet[], int esq, int dir);
+void QuickSort(int vet[], int esq, int dir);
 
 int main() {
 	int n;
@@ -9,13 +9,13 @@ int main() {
 	int v[n];
 	for(int i = 0; i < n; i++) cin>>v[i];
 	
-	QuickSortRec(v, 0, n - 1);
+	QuickSort(v, 0, n - 1);
 	
 	for(int i = 0; i < n; i++) cout<<v[i]<<" ";
 	return 0;
 }
 
-void QuickSortRec(int vet[], int esq, int dir) {
+void QuickSort(int vet[], int esq, int dir) {
 	int i= esq, j = dir;
 	int pivo = vet[(i+j)/2];
 	do {
@@ -27,6 +27,6 @@ void QuickSortRec(int vet[], int esq, int dir) {
 			j--;
 		}
 	} while (i <= j);
-	if (esq < j) QuickSortRec(vet, esq, j);
-	if (dir > j) QuickSortRec(vet, i, dir);
+	if (esq < j) QuickSort(vet, esq, j);
+	if (dir > j) QuickSort(vet, i, dir);
 }
